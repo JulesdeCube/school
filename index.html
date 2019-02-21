@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>002-001-002-002 - RDM Traction - Activite : rapport</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+  <!-- <div id="toTheTop" class="toTheTop button">
+      <i class="fas fa-angle-double-up"></i>
+  </div> -->
+  <header class="page-header">
+    <a href="" class="header-icon button"><!-- <i class="fas fa-arrow-left"></i> --></a>
+    <h1 class="page-title">002-001-002-002 - RDM Traction - Activite : rapport</h1>
+    <a href="" class="header-icon button"><!-- <i class="fas fa-bars"></i> --></a>
+  </header>
+
+
+  <div id="main">
+    <p class="questionS">
+      <strong> Question sociétale: </strong>Comment assurer une certaine continuité de la chaîne du froid ?
+    </p>
+    <p class="objectif">
+      <strong>Problématique : </strong>Comment maintenir des éléments à une température plus fraîche que la température extérieure?
+    </p>
+    <p class="objectif">
+      <strong>Problématique technique : </strong>Comment informer l’utilisateur de la température intérieure ?
+    </p>
+    <p class="objectif">
+      <strong>Problématique : </strong>Comment traiter 
+      l'information provenant de température ? Quelle architecture faut-il mettre en place pour satisfaire le cahier des charges ?
+    </p>
+
+    <div id="1" class="chapiter">
+      <h1>1. ETUDE N°1 DE LA GLACIERE : ETUDE DE LA FONCTION CONDITIONNEMENT</h1>
+      
+      <div id="1-1" class="chapiter">
+        <h2>1.1 Partie 1 :recherche d’une architecture de solution</h2>
+        
+        <p class="objectif">
+          <strong> Objectif :</strong> Valider par une simulation le choix d’une architecture
+        </p>
+        <p>
+          <strong>1.</strong> <br>
+          \(V_{cc} = 5V\) et \(R_{1} = 10kΩ\) <br>
+          \(R_{T} = 100+3.85\times 10^{-1}T\) <br>
+          \(V_{T} = \frac{R_{T}}{R_{1}+R_{T}}\times V_{cc} 
+          =
+          \frac{ 100+3.85\times 10^{-1}T}{10 000+ 100+3.85\times 10^{-1}T}\times 5 = 
+          \frac{ 500+19.25\times 10^{-1}T}{10 100 + 3.85\times 10^{-1}T}\times 5\)  <br>
+          <br>
+          \(V_{T}\left(-15\right) = 0.0467V\)  <BR>
+          \(V_{T}\left(55\right) = 0.05986V\)  </BR>
+        </p>
+
+        <p>
+          <strong>2.</strong> <br>
+          \(V_{REF} = V_{T}\left(-15\right)
+          = 0.0467V
+          \) 
+        </p>
+
+        <p>
+          <strong>3.</strong> <br>
+          \(A = 265.36
+          \) 
+        </p>
+
+        <p>
+            <strong>4.</strong> <br>
+            \(\to\)voir <a href="./sujet/conditionnement_partie1.slx">conditionnement_partie1.slx</a>
+          </p>
+
+        <p>
+          <strong>5.</strong> <br>
+          <img src="./courbe.svg" alt=""> <br>
+          le model est valider car la courbe passe bien par \(\left(-15;0\right)\) et \(\left(55;3.5\right)\)
+        </p>
+
+        <p>
+          <strong>6.</strong> <br>
+          le fait dutiliser \(R_1 = 10 kΩ\) permet d'avoir une droite presque lineaire.
+        </p>
+
+        <p>
+          <strong>7.</strong> <br>
+          \(V_{T2} =0.05T+0.75 \)
+        </p>
+
+      </div>
+
+      <div id="1-2" class="chapiter">
+          <h2>1.2 Partie 2 :modélisation multi-physique du conditionnement</h2>
+          
+          <p class="objectif">
+            <strong> Objectif :</strong> Modéliser la solution structurelle
+          </p>
+          <p>
+            <strong>1.</strong> <br>
+            \(V_{cc} = 5V\) et \(R_{1} = 10kΩ\) <br>
+            \(R_{T} = 100+3.85\times 10^{-1}T\) <br>
+            \(V_{T} = \frac{R_{T}}{R_{1}+R_{T}}\times V_{cc} 
+            =
+            \frac{ 100+3.85\times 10^{-1}T}{10 000+ 100+3.85\times 10^{-1}T}\times 5 = 
+            \frac{ 500+19.25\times 10^{-1}T}{10 100 + 3.85\times 10^{-1}T}\times 5\)  <br>
+            <br>
+            \(V_{T}\left(-15\right) = 0.0467V\)  <BR>
+            \(V_{T}\left(55\right) = 0.05986V\)  </BR>
+          </p>
+
+          <strong>2.</strong> <br>
+          \(\to\)voir <a href="./sujet/conditionnement_partie2.slx">conditionnement_partie2Z.slx</a>
+          <img src="courbe electique.svg" alt="">
+          <img src="schma.PNG" alt="">
+        </p>
+
+        </div>
+
+    </div>
+   
+  </div>  
+</body>
+
+<style>
+  .oeuvre {
+    text-decoration: underline ;
+    font-family: charm;
+  }
+  .citation {
+    font-family: charm;
+    font-size: 1.2em;
+  }
+  .citation > .text{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: justify;
+  }
+  .citation > .auteur {
+    font-weight: bold;
+    text-align: right;
+  }
+  .objectif {
+    color: #16c551;
+  }
+  .questionS {
+    color: #c59616;
+  }
+  .chapiter {
+    margin-left: 1em;
+  }
+  img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+  body{
+    font-size:0.4cm; 
+    line-height: 1.5;
+    font-family: Open Sans;
+    color: rgb(233, 233, 233);
+    margin: 0;
+  }
+
+  q {
+    font-family: charm;
+  }
+  #main{
+   margin-top: 1em;
+   padding: 3em;
+    color: rgb(31, 31, 36);
+  }
+  .page-header {
+    z-index: 1;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+ 
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1.5em 1fr 1.5em;
+    grid-gap: 1em;
+
+    padding: 0.4em;
+    box-shadow: #3b4249 0px 4px 8px;
+
+    background-color: #34495e;
+
+    font-size: 1.5em;
+
+    animation: page-header-in 0.5s ease-out;
+  }
+  .MJXc-display{
+
+    overflow-x: auto;
+    overflow-y:hidden;
+  }
+  @keyframes page-header-in {
+   0% {top: -4em;}
+   100% {top: 0;} 
+  }
+  .page-title {
+    text-align: center;
+    font-size: 1em;
+    margin: 0;
+  }
+
+  .header-icon {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    height: 1.5em;
+    width: 1.5em;
+
+    font-size: 0.8em;
+  }
+
+  .header-icon,
+  .fas {
+    color: inherit;
+  }
+
+  a, ref{
+    text-decoration: none;
+    color: #34495e;
+    cursor:pointer;
+
+    font-weight: 700;
+  }
+
+  .toTheTop {
+    z-index: 1;
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    
+    width: 4rem;
+    height: 4rem;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    
+    border-radius: 100%;
+
+    box-shadow: #595d61 0px 4px 8px;
+    
+    background-color: #34495e;
+    
+    font-size: 1.75em;
+    animation: toTheTop-in 1s ease-out ;
+  }
+  @keyframes toTheTop-in {
+    0% {
+      right: 1.5em;
+      display: none;
+    } 
+    50% {
+      right: -4em;
+      display: grid;}
+    100% {right: 1.5em;} 
+  }
+  .button {
+
+    cursor: pointer
+
+  }
+
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:600px; 
+    max-width: 100%;
+  }
+@keyframes highLight {
+   0% {}
+   50% {
+     background-color: #1abc9c;
+   }
+   100% {} 
+  }
+</style>
+
+</html>
